@@ -3,6 +3,7 @@ import { Agent } from '@mastra/core/agent';
 import { Memory } from '@mastra/memory';
 import { LibSQLStore } from '@mastra/libsql';
 import { codeAnalysisTool } from '../tools/code-analysis-tool';
+import { fileSystemTool } from '../tools/file-system-tool';
 
 export const annotatorAgent = new Agent({
   name: 'Annotator Agent',
@@ -15,6 +16,7 @@ export const annotatorAgent = new Agent({
       - Identify patterns, dependencies, and architectural insights
       - Suggest improvements for code clarity and maintainability
       - Create functional documentation that explains what code does, not just how
+      - Save annotations and documentation to files when requested
 
       When analyzing code:
       - Focus on the purpose and business logic, not just implementation details
@@ -24,10 +26,18 @@ export const annotatorAgent = new Agent({
       - Highlight potential issues or improvements
       - Use clear, professional language suitable for technical documentation
 
-      Use the codeAnalysisTool to examine code files and extract meaningful insights.
+      Available tools:
+      - codeAnalysisTool: Use to examine code files and extract meaningful insights
+      - fileSystemTool: Use to read source files, save annotations, or list directory contents
+
+      When saving annotations, create well-structured documentation files with:
+      - Clear headings and sections
+      - Code examples where helpful
+      - Proper markdown formatting
+      - Comprehensive API documentation
 `,
   model: openai('gpt-4o-mini'),
-  tools: { codeAnalysisTool },
+  tools: { codeAnalysisTool, fileSystemTool },
   memory: new Memory({
     storage: new LibSQLStore({
       url: 'file:../annotator.db', // path is relative to the .mastra/output directory
