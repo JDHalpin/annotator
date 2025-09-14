@@ -1,0 +1,303 @@
+/* Custom styles for Annotator with Bootstrap 5.x responsive breakpoints */
+
+:root {
+    --sidebar-width: 280px;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --info-color: #0dcaf0;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+/* Body and layout */
+body {
+    font-size: 0.875rem;
+    background-color: #f8f9fa;
+}
+
+/* Sidebar styles with responsive behavior */
+.sidebar {
+    position: fixed;
+    top: 56px; /* Height of navbar */
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    width: var(--sidebar-width);
+}
+
+.sidebar .nav-link {
+    color: #333;
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+}
+
+.sidebar .nav-link.active {
+    color: var(--primary-color);
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* Main content responsive adjustments */
+main {
+    padding-top: 1rem;
+}
+
+/* Responsive breakpoint adjustments */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        top: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    main {
+        margin-left: 0;
+        padding: 0.5rem;
+    }
+    
+    .navbar-brand span {
+        display: none !important;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-toolbar .btn-group {
+        margin-bottom: 0.5rem;
+    }
+    
+    .list-group-item .d-flex .flex-grow-1 small {
+        display: block;
+        margin-top: 0.25rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        top: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    
+    .navbar-brand span {
+        display: inline !important;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    main {
+        margin-left: 200px;
+    }
+    
+    .navbar .nav-item .nav-link span {
+        display: none;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    main {
+        margin-left: var(--sidebar-width);
+    }
+    
+    .navbar .nav-item .nav-link span {
+        display: inline;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    main {
+        margin-left: var(--sidebar-width);
+    }
+    
+    .container-fluid {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+    .container-fluid {
+        max-width: 1600px;
+    }
+    
+    .sidebar {
+        width: 320px;
+    }
+    
+    main {
+        margin-left: 320px;
+    }
+}
+
+/* Card enhancements */
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: box-shadow 0.15s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation enhancements */
+.navbar {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Button responsive behavior */
+@media (max-width: 767.98px) {
+    .btn-toolbar .btn {
+        margin-bottom: 0.25rem;
+        width: 100%;
+    }
+    
+    .btn-toolbar {
+        flex-direction: column;
+    }
+    
+    .btn-group {
+        width: 100%;
+        margin-right: 0 !important;
+    }
+    
+    .btn-group .btn {
+        width: 50%;
+    }
+}
+
+/* Statistics cards responsive text */
+@media (max-width: 575.98px) {
+    .card-body h2 {
+        font-size: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 0.875rem;
+    }
+}
+
+/* Activity list responsive adjustments */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Quick actions responsive */
+@media (max-width: 575.98px) {
+    .d-grid .btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Utility classes for responsive behavior */
+.responsive-table {
+    font-size: 0.875rem;
+}
+
+@media (max-width: 767.98px) {
+    .responsive-table {
+        font-size: 0.75rem;
+    }
+    
+    .responsive-table th,
+    .responsive-table td {
+        padding: 0.5rem 0.25rem;
+    }
+}
+
+/* Animation and transitions */
+.sidebar,
+main {
+    transition: all 0.3s ease;
+}
+
+/* Print styles */
+@media print {
+    .sidebar,
+    .navbar,
+    .btn-toolbar {
+        display: none !important;
+    }
+    
+    main {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .card {
+        border: 1px solid #dee2e6 !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Focus and accessibility improvements */
+.nav-link:focus,
+.btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card {
+        border: 2px solid #000;
+    }
+    
+    .sidebar .nav-link {
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    main,
+    .card {
+        transition: none;
+    }
+}
