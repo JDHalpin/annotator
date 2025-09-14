@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotator - AI Tool for Annotations and Functional Documentation</title>
+    
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-pencil-square me-2"></i>
+                <span class="d-none d-sm-inline">Annotator</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#dashboard">
+                            <i class="bi bi-house-door me-1"></i>
+                            <span class="d-lg-inline d-none">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#annotations">
+                            <i class="bi bi-chat-square-text me-1"></i>
+                            <span class="d-lg-inline d-none">Annotations</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#documentation">
+                            <i class="bi bi-file-earmark-text me-1"></i>
+                            <span class="d-lg-inline d-none">Documentation</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#settings">
+                            <i class="bi bi-gear me-1"></i>
+                            <span class="d-lg-inline d-none">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (hidden on small screens, collapsible on medium+) -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" id="sidebar">
+                <div class="position-sticky pt-3">
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Projects</span>
+                        <button class="btn btn-sm btn-outline-secondary" type="button">
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+                    </h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="bi bi-folder me-2"></i>
+                                Current Project
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-folder me-2"></i>
+                                Recent Documents
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Tools</span>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-robot me-2"></i>
+                                AI Assistant
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-search me-2"></i>
+                                Search
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-download me-2"></i>
+                                Export
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content area -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <!-- Header with responsive utilities -->
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary d-none d-sm-inline-block">
+                                <i class="bi bi-share me-1"></i>Share
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-download me-1"></i>
+                                <span class="d-none d-md-inline">Export</span>
+                            </button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-primary d-md-none" data-bs-toggle="collapse" data-bs-target="#sidebar">
+                            <i class="bi bi-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Responsive grid layout -->
+                <div class="row">
+                    <!-- Statistics cards - responsive columns -->
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="card-title text-muted mb-0">Documents</h5>
+                                        <h2 class="mb-0">24</h2>
+                                    </div>
+                                    <div class="text-primary">
+                                        <i class="bi bi-file-earmark-text fs-2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="card-title text-muted mb-0">Annotations</h5>
+                                        <h2 class="mb-0">156</h2>
+                                    </div>
+                                    <div class="text-success">
+                                        <i class="bi bi-chat-square-text fs-2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="card-title text-muted mb-0">AI Insights</h5>
+                                        <h2 class="mb-0">89</h2>
+                                    </div>
+                                    <div class="text-warning">
+                                        <i class="bi bi-robot fs-2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="card-title text-muted mb-0">Projects</h5>
+                                        <h2 class="mb-0">7</h2>
+                                    </div>
+                                    <div class="text-info">
+                                        <i class="bi bi-folder fs-2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main content area with responsive layout -->
+                <div class="row">
+                    <!-- Left column - larger on desktop, full width on mobile -->
+                    <div class="col-lg-8 col-12 mb-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Recent Activity</h5>
+                                <small class="text-muted d-none d-sm-inline">Last 7 days</small>
+                            </div>
+                            <div class="card-body">
+                                <!-- Activity list with responsive behavior -->
+                                <div class="list-group list-group-flush">
+                                    <div class="list-group-item d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <i class="bi bi-plus-circle text-success"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">New annotation added</h6>
+                                                <small class="d-none d-md-inline">3 days ago</small>
+                                            </div>
+                                            <p class="mb-1">Added annotation to project documentation.</p>
+                                            <small class="d-md-none">3 days ago</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="list-group-item d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <i class="bi bi-robot text-primary"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">AI analysis completed</h6>
+                                                <small class="d-none d-md-inline">1 week ago</small>
+                                            </div>
+                                            <p class="mb-1">Generated insights for user interface components.</p>
+                                            <small class="d-md-none">1 week ago</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="list-group-item d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <i class="bi bi-file-earmark-text text-info"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">Documentation updated</h6>
+                                                <small class="d-none d-md-inline">1 week ago</small>
+                                            </div>
+                                            <p class="mb-1">Updated API documentation with new endpoints.</p>
+                                            <small class="d-md-none">1 week ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right column - sidebar on desktop, below on mobile -->
+                    <div class="col-lg-4 col-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Quick Actions</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="bi bi-plus-lg me-2"></i>New Annotation
+                                    </button>
+                                    <button class="btn btn-outline-primary" type="button">
+                                        <i class="bi bi-upload me-2"></i>Upload Document
+                                    </button>
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="bi bi-robot me-2"></i>AI Analysis
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Recent Files</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                        <i class="bi bi-file-earmark-text me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0">API Documentation</h6>
+                                            <small class="text-muted">Updated today</small>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                        <i class="bi bi-file-earmark-code me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0">Component Guide</h6>
+                                            <small class="text-muted">2 days ago</small>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                        <i class="bi bi-file-earmark-pdf me-3"></i>
+                                        <div>
+                                            <h6 class="mb-0">Project Report</h6>
+                                            <small class="text-muted">1 week ago</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.2 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

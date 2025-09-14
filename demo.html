@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Demo - Annotator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        .demo-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .responsive-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 10px 0;
+        }
+        .breakpoint-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .breakpoint-table th,
+        .breakpoint-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .breakpoint-table th {
+            background-color: #007bff;
+            color: white;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .feature-list li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Annotator - Responsive UI Demo</h1>
+    
+    <div class="demo-section">
+        <h2>Bootstrap 5.x Breakpoints Implementation</h2>
+        <div class="responsive-info">
+            <strong>Responsive Design:</strong> The Annotator application uses Bootstrap 5.x breakpoints to provide an optimal viewing experience across all devices.
+        </div>
+        
+        <table class="breakpoint-table">
+            <thead>
+                <tr>
+                    <th>Breakpoint</th>
+                    <th>Screen Size</th>
+                    <th>Device Type</th>
+                    <th>Layout Behavior</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>xs</code></td>
+                    <td>&lt; 576px</td>
+                    <td>Portrait phones</td>
+                    <td>Single column, collapsed sidebar, hamburger menu</td>
+                </tr>
+                <tr>
+                    <td><code>sm</code></td>
+                    <td>≥ 576px</td>
+                    <td>Landscape phones</td>
+                    <td>Responsive grid, compact navigation</td>
+                </tr>
+                <tr>
+                    <td><code>md</code></td>
+                    <td>≥ 768px</td>
+                    <td>Tablets</td>
+                    <td>Fixed sidebar (200px), icons with selective text</td>
+                </tr>
+                <tr>
+                    <td><code>lg</code></td>
+                    <td>≥ 992px</td>
+                    <td>Desktops</td>
+                    <td>Full sidebar (280px), complete navigation text</td>
+                </tr>
+                <tr>
+                    <td><code>xl</code></td>
+                    <td>≥ 1200px</td>
+                    <td>Large desktops</td>
+                    <td>Optimized spacing, centered container</td>
+                </tr>
+                <tr>
+                    <td><code>xxl</code></td>
+                    <td>≥ 1400px</td>
+                    <td>Extra large desktops</td>
+                    <td>Wider sidebar (320px), maximum container width</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="demo-section">
+        <h2>Responsive Features Implemented</h2>
+        <ul class="feature-list">
+            <li>Adaptive navigation bar with collapsible menu for mobile devices</li>
+            <li>Responsive sidebar that adjusts width based on screen size</li>
+            <li>Grid system that stacks cards on mobile and displays in columns on desktop</li>
+            <li>Typography scaling for optimal readability across devices</li>
+            <li>Touch-friendly buttons and interactive elements on mobile</li>
+            <li>Contextual text display (hide/show labels based on screen size)</li>
+            <li>Responsive tables with horizontal scrolling on small screens</li>
+            <li>Optimized spacing and padding for different viewport sizes</li>
+            <li>Print-friendly styles that hide navigation elements</li>
+            <li>Accessibility improvements with proper focus states</li>
+            <li>High contrast mode support for better accessibility</li>
+            <li>Reduced motion support for users with vestibular disorders</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>How to Test Responsive Behavior</h2>
+        <div class="responsive-info">
+            <strong>Testing Instructions:</strong>
+            <ol>
+                <li>Open <code>index.html</code> in your web browser</li>
+                <li>Use browser developer tools to simulate different device sizes</li>
+                <li>Resize the browser window to see responsive breakpoints in action</li>
+                <li>Test navigation functionality on mobile devices</li>
+                <li>Verify that all content remains accessible and usable at all screen sizes</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Files Structure</h2>
+        <ul>
+            <li><strong>index.html</strong> - Main application interface with responsive layout</li>
+            <li><strong>styles.css</strong> - Custom CSS with Bootstrap 5.x responsive enhancements</li>
+            <li><strong>app.js</strong> - JavaScript for responsive behavior and interactivity</li>
+            <li><strong>demo.html</strong> - This demonstration page</li>
+            <li><strong>README.md</strong> - Complete documentation</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>Quick Start</h2>
+        <div class="responsive-info">
+            To run the application locally:
+            <ol>
+                <li>Start a local web server: <code>python3 -m http.server 8080</code></li>
+                <li>Open browser to: <code>http://localhost:8080</code></li>
+                <li>Test responsive behavior by resizing browser window</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
